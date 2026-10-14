@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GRYHTML – Darmowe gry przeglądarkowe HTML5</title>
+  <meta name="description" content="GRYHTML – nowoczesny portal z darmowymi grami HTML5. Graj online bez instalacji: przygodowe, akcja, arcade, wyścigowe i więcej.">
+  <meta property="og:title" content="GRYHTML – Darmowe gry HTML5">
+  <meta property="og:description" content="Odkrywaj, graj i wracaj po więcej. Darmowe gry przeglądarkowe.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="header__inner">
+      <a href="index.html" class="logo" aria-label="GRYHTML – strona główna">
+        <span class="logo__mark" aria-hidden="true">▶</span>
+        <span class="logo__text">GRY<span>HTML</span></span>
+      </a>
+      <nav class="nav" data-nav aria-label="Główna nawigacja">
+        <a href="index.html" class="is-active">Strona główna</a>
+        <a href="kategorie.html">Kategorie</a>
+        <a href="kategorie.html#nowe">Nowe gry</a>
+        <a href="kategorie.html#popularne">Popularne</a>
+        <a href="ulubione.html">Ulubione</a>
+      </nav>
+      <form class="header__search" data-search-form role="search">
+        <label class="sr-only" for="q-header">Szukaj gier</label>
+        <input type="search" id="q-header" name="q" placeholder="Szukaj gier…" autocomplete="off">
+        <button type="submit" aria-label="Szukaj">🔍</button>
+      </form>
+      <div class="header__actions">
+        <a href="ulubione.html" class="btn-icon" aria-label="Ulubione">
+          ♥
+          <span data-fav-count hidden></span>
+        </a>
+        <button type="button" class="menu-toggle" data-menu-toggle aria-label="Otwórz menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <div class="menu-overlay" data-menu-overlay hidden></div>
+  <aside class="mobile-menu" data-mobile-menu aria-label="Menu mobilne">
+    <form class="mobile-menu__search" data-search-form>
+      <input type="search" name="q" placeholder="Szukaj gier…" aria-label="Szukaj">
+    </form>
+    <nav data-nav>
+      <a href="index.html">Strona główna</a>
+      <a href="kategorie.html">Kategorie</a>
+      <a href="ulubione.html">Ulubione</a>
+      <a href="przygodowe.html">Przygodowe</a>
+      <a href="akcja.html">Akcja</a>
+      <a href="arcade.html">Arcade</a>
+      <a href="mobilne.html">Mobilne</a>
+      <a href="szukaj.html">Wyszukiwanie</a>
+    </nav>
+  </aside>
+
+  <main>
+    <section class="hero">
+      <div class="container hero__inner">
+        <div>
+          <span class="hero__badge">Gry HTML5 online</span>
+          <h1>Twoje gry. <em>Twój świat.</em></h1>
+          <p class="hero__desc">Odkrywaj, graj i wracaj po więcej. Darmowe gry przeglądarkowe bez instalacji.</p>
+          <div class="hero__actions">
+            <a href="#popularne" class="btn btn--primary">Graj teraz</a>
+            <a href="kategorie.html" class="btn btn--secondary">Odkryj gry</a>
+          </div>
+        </div>
+        <div class="hero__visual" aria-hidden="true">
+          <div class="hero__tile">▶</div>
+          <div class="hero__tile">◆</div>
+          <div class="hero__tile">●</div>
+          <div class="hero__tile">▲</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reveal" id="popularne">
+      <div class="container">
+        <div class="section__head">
+          <h2 class="section__title">Popularne gry</h2>
+          <a href="kategorie.html" class="section__link">Zobacz wszystkie →</a>
+        </div>
+        <div class="games-grid" data-section="popular" role="list"></div>
+      </div>
+    </section>
+
+    <section class="section reveal">
+      <div class="container">
+        <div class="section__head">
+          <h2 class="section__title">Nowo dodane</h2>
+          <a href="kategorie.html" class="section__link">Więcej →</a>
+        </div>
+        <div class="games-grid" data-section="newest" role="list"></div>
+      </div>
+    </section>
+
+    <section class="section reveal">
+      <div class="container">
+        <div class="section__head">
+          <h2 class="section__title">Gry przygodowe</h2>
+          <a href="przygodowe.html" class="section__link">Kategoria →</a>
+        </div>
+        <div class="games-grid" data-section="adventure" role="list"></div>
+      </div>
+    </section>
+
+    <section class="section reveal">
+      <div class="container">
+        <div class="section__head">
+          <h2 class="section__title">Gry akcji</h2>
+          <a href="akcja.html" class="section__link">Kategoria →</a>
+        </div>
+        <div class="games-grid" data-section="action" role="list"></div>
+      </div>
+    </section>
+
+    <section class="section reveal">
+      <div class="container">
+        <div class="section__head">
+          <h2 class="section__title">Gry mobilne</h2>
+          <a href="mobilne.html" class="section__link">Kategoria →</a>
+        </div>
+        <div class="games-grid" data-section="mobile" role="list"></div>
+      </div>
+    </section>
+
+    <section class="section reveal">
+      <div class="container">
+        <div class="section__head">
+          <h2 class="section__title">Odkryj kategorie</h2>
+        </div>
+        <div class="cat-grid">
+          <a href="przygodowe.html" class="cat-card"><div class="cat-card__icon">🗺️</div><div class="cat-card__name">Przygodowe</div></a>
+          <a href="akcja.html" class="cat-card"><div class="cat-card__icon">💥</div><div class="cat-card__name">Akcja</div></a>
+          <a href="arcade.html" class="cat-card"><div class="cat-card__icon">👾</div><div class="cat-card__name">Arcade</div></a>
+          <a href="wyscigowe.html" class="cat-card"><div class="cat-card__icon">🏎️</div><div class="cat-card__name">Wyścigowe</div></a>
+          <a href="sportowe.html" class="cat-card"><div class="cat-card__icon">⚽</div><div class="cat-card__name">Sportowe</div></a>
+          <a href="logiczne.html" class="cat-card"><div class="cat-card__icon">🧩</div><div class="cat-card__name">Logiczne</div></a>
+          <a href="dziewczyny.html" class="cat-card"><div class="cat-card__icon">👗</div><div class="cat-card__name">Dla dziewczyn</div></a>
+          <a href="mobilne.html" class="cat-card"><div class="cat-card__icon">📱</div><div class="cat-card__name">Mobilne</div></a>
+          <a href="mario.html" class="cat-card"><div class="cat-card__icon">🍄</div><div class="cat-card__name">Mario</div></a>
+          <a href="roblox.html" class="cat-card"><div class="cat-card__icon">🧱</div><div class="cat-card__name">Roblox</div></a>
+          <a href="spongebob.html" class="cat-card"><div class="cat-card__icon">🧽</div><div class="cat-card__name">SpongeBob</div></a>
+          <a href="angry-birds.html" class="cat-card"><div class="cat-card__icon">🐦</div><div class="cat-card__name">Angry Birds</div></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section reveal">
+      <div class="container">
+        <div class="section__head">
+          <h2 class="section__title">Ostatnio grane</h2>
+        </div>
+        <div class="games-grid" data-section="recent" role="list"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <div class="footer__brand">GRY<span>HTML</span></div>
+          <p>Darmowy portal z grami przeglądarkowymi HTML5. Graj online bez rejestracji i instalacji.</p>
+        </div>
+        <div>
+          <h4>Nawigacja</h4>
+          <a href="index.html">Strona główna</a>
+          <a href="kategorie.html">Kategorie</a>
+          <a href="ulubione.html">Ulubione</a>
+          <a href="szukaj.html">Szukaj</a>
+        </div>
+        <div>
+          <h4>Informacje</h4>
+          <a href="index.html">O platformie</a>
+          <a href="mailto:kontakt@gryhtml.example">Kontakt</a>
+          <a href="index.html">Polityka prywatności</a>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        © 2026 GRYHTML. Gry pochodzą z zewnętrznych dostawców. Nie jesteśmy powiązani z właścicielami marek użytych w nazwach kategorii.
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/api.js"></script>
+  <script src="assets/js/favorites.js"></script>
+  <script src="assets/js/games.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/categories.js"></script>
+</body>
+</html>

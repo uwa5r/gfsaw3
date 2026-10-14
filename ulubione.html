@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ulubione gry – GRYHTML</title>
+  <meta name="description" content="Twoja lista ulubionych gier HTML5 zapisana lokalnie w przeglądarce.">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="header__inner">
+      <a href="index.html" class="logo"><span class="logo__mark">▶</span><span class="logo__text">GRY<span>HTML</span></span></a>
+      <nav class="nav" data-nav>
+        <a href="index.html">Strona główna</a>
+        <a href="kategorie.html">Kategorie</a>
+        <a href="ulubione.html" class="is-active">Ulubione</a>
+      </nav>
+      <form class="header__search" data-search-form role="search">
+        <label class="sr-only" for="q">Szukaj</label>
+        <input type="search" id="q" name="q" placeholder="Szukaj gier…" autocomplete="off">
+        <button type="submit" aria-label="Szukaj">🔍</button>
+      </form>
+      <div class="header__actions">
+        <a href="ulubione.html" class="btn-icon" aria-label="Ulubione">♥ <span data-fav-count hidden></span></a>
+        <button type="button" class="menu-toggle" data-menu-toggle aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+  <div class="menu-overlay" data-menu-overlay></div>
+  <aside class="mobile-menu" data-mobile-menu>
+    <nav data-nav>
+      <a href="index.html">Strona główna</a>
+      <a href="kategorie.html">Kategorie</a>
+      <a href="ulubione.html">Ulubione</a>
+    </nav>
+  </aside>
+
+  <main>
+    <div class="page-header">
+      <div class="container">
+        <h1>Ulubione</h1>
+        <p>Gry zapisane w tej przeglądarce (LocalStorage). Lista nie jest synchronizowana między urządzeniami.</p>
+      </div>
+    </div>
+    <div class="container" style="padding:24px 16px 48px">
+      <div class="games-grid" id="fav-list" role="list"></div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container"><div class="footer__bottom">© 2026 GRYHTML</div></div>
+  </footer>
+
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/api.js"></script>
+  <script src="assets/js/favorites.js"></script>
+  <script src="assets/js/games.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script>
+    (function () {
+      function render() {
+        const list = GRYHTML_FAV.getFavorites();
+        const el = document.getElementById('fav-list');
+        GRYHTML_GAMES.renderGames(el, list, {
+          showEmpty: true,
+          emptyTitle: 'Brak ulubionych',
+          emptyText: 'Dodaj gry klikając serduszko na karcie lub na stronie gry. Lista zapisuje się lokalnie w przeglądarce.'
+        });
+      }
+      document.addEventListener('gryhtml:favorites-changed', render);
+      if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', render);
+      else render();
+    })();
+  </script>
+</body>
+</html>

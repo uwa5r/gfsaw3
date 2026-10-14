@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Gra – GRYHTML</title>
+  <meta name="description" content="Graj w gry HTML5 online na GRYHTML.">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="header__inner">
+      <a href="index.html" class="logo"><span class="logo__mark">▶</span><span class="logo__text">GRY<span>HTML</span></span></a>
+      <nav class="nav" data-nav>
+        <a href="index.html">Strona główna</a>
+        <a href="kategorie.html">Kategorie</a>
+        <a href="ulubione.html">Ulubione</a>
+      </nav>
+      <form class="header__search" data-search-form role="search">
+        <label class="sr-only" for="q">Szukaj</label>
+        <input type="search" id="q" name="q" placeholder="Szukaj gier…" autocomplete="off">
+        <button type="submit" aria-label="Szukaj">🔍</button>
+      </form>
+      <div class="header__actions">
+        <a href="ulubione.html" class="btn-icon" aria-label="Ulubione">♥ <span data-fav-count hidden></span></a>
+        <button type="button" class="menu-toggle" data-menu-toggle aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+  <div class="menu-overlay" data-menu-overlay></div>
+  <aside class="mobile-menu" data-mobile-menu>
+    <nav data-nav>
+      <a href="index.html">Strona główna</a>
+      <a href="kategorie.html">Kategorie</a>
+      <a href="ulubione.html">Ulubione</a>
+    </nav>
+  </aside>
+
+  <main class="player-layout">
+    <div class="container">
+      <h1 data-game-title>Ładowanie gry…</h1>
+
+      <div class="player-frame" data-player-wrap>
+        <div class="player-frame__ratio">
+          <div class="player-loading" data-player-loading>
+            <div class="spinner" aria-hidden="true"></div>
+            <span>Ładowanie danych gry…</span>
+          </div>
+          <div class="player-error" data-player-error hidden role="alert"></div>
+          <iframe data-player-iframe title="Odtwarzacz gry" allow="autoplay; fullscreen; gamepad; accelerometer; gyroscope" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+      </div>
+
+      <div class="player-controls">
+        <button type="button" class="btn btn--primary" data-play-btn>▶ Uruchom grę</button>
+        <button type="button" class="btn btn--secondary" data-fullscreen-btn>⛶ Pełny ekran</button>
+        <button type="button" class="btn btn--ghost" data-refresh-btn>↻ Odśwież</button>
+        <button type="button" class="btn btn--ghost" data-fav-btn>♡ Dodaj do ulubionych</button>
+        <a href="index.html" class="btn btn--ghost">← Katalog</a>
+      </div>
+
+      <div class="player-meta">
+        <h2>Opis</h2>
+        <p data-game-desc>—</p>
+        <h2>Sterowanie</h2>
+        <p data-game-instr>—</p>
+        <h2>Kategoria</h2>
+        <p data-game-cat>—</p>
+        <h2>Tagi</h2>
+        <div class="tags" data-game-tags></div>
+      </div>
+
+      <section>
+        <div class="section__head">
+          <h2 class="section__title">Podobne gry</h2>
+        </div>
+        <div class="games-grid" data-similar role="list"></div>
+      </section>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__bottom">© 2026 GRYHTML. Gry są hostowane przez zewnętrznych dostawców. Niektóre tytuły mogą blokować osadzanie w iframe.</div>
+    </div>
+  </footer>
+
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/api.js"></script>
+  <script src="assets/js/favorites.js"></script>
+  <script src="assets/js/games.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/player.js"></script>
+</body>
+</html>

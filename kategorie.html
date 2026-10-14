@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kategorie gier – GRYHTML</title>
+  <meta name="description" content="Przeglądaj kategorie gier HTML5: przygodowe, akcja, arcade, wyścigowe, sportowe, logiczne i więcej.">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="header__inner">
+      <a href="index.html" class="logo"><span class="logo__mark">▶</span><span class="logo__text">GRY<span>HTML</span></span></a>
+      <nav class="nav" data-nav>
+        <a href="index.html">Strona główna</a>
+        <a href="kategorie.html" class="is-active">Kategorie</a>
+        <a href="ulubione.html">Ulubione</a>
+      </nav>
+      <form class="header__search" data-search-form role="search">
+        <label class="sr-only" for="q">Szukaj</label>
+        <input type="search" id="q" name="q" placeholder="Szukaj gier…" autocomplete="off">
+        <button type="submit" aria-label="Szukaj">🔍</button>
+      </form>
+      <div class="header__actions">
+        <a href="ulubione.html" class="btn-icon" aria-label="Ulubione">♥ <span data-fav-count hidden></span></a>
+        <button type="button" class="menu-toggle" data-menu-toggle aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+  <div class="menu-overlay" data-menu-overlay></div>
+  <aside class="mobile-menu" data-mobile-menu>
+    <form class="mobile-menu__search" data-search-form><input type="search" name="q" placeholder="Szukaj…" aria-label="Szukaj"></form>
+    <nav data-nav>
+      <a href="index.html">Strona główna</a>
+      <a href="kategorie.html">Kategorie</a>
+      <a href="ulubione.html">Ulubione</a>
+    </nav>
+  </aside>
+
+  <main>
+    <div class="page-header">
+      <div class="container">
+        <h1>Kategorie</h1>
+        <p>Wybierz kategorię i znajdź grę dopasowaną do nastroju. Wszystkie tytuły pochodzą z katalogu HTML5.</p>
+      </div>
+    </div>
+    <section class="section">
+      <div class="container">
+        <div class="cat-grid">
+          <a href="przygodowe.html" class="cat-card"><div class="cat-card__icon">🗺️</div><div class="cat-card__name">Przygodowe</div></a>
+          <a href="akcja.html" class="cat-card"><div class="cat-card__icon">💥</div><div class="cat-card__name">Akcja</div></a>
+          <a href="arcade.html" class="cat-card"><div class="cat-card__icon">👾</div><div class="cat-card__name">Arcade</div></a>
+          <a href="wyscigowe.html" class="cat-card"><div class="cat-card__icon">🏎️</div><div class="cat-card__name">Wyścigowe</div></a>
+          <a href="sportowe.html" class="cat-card"><div class="cat-card__icon">⚽</div><div class="cat-card__name">Sportowe</div></a>
+          <a href="logiczne.html" class="cat-card"><div class="cat-card__icon">🧩</div><div class="cat-card__name">Logiczne</div></a>
+          <a href="dziewczyny.html" class="cat-card"><div class="cat-card__icon">👗</div><div class="cat-card__name">Dla dziewczyn</div></a>
+          <a href="mobilne.html" class="cat-card"><div class="cat-card__icon">📱</div><div class="cat-card__name">Mobilne</div></a>
+          <a href="mario.html" class="cat-card"><div class="cat-card__icon">🍄</div><div class="cat-card__name">Mario</div></a>
+          <a href="roblox.html" class="cat-card"><div class="cat-card__icon">🧱</div><div class="cat-card__name">Roblox</div></a>
+          <a href="spongebob.html" class="cat-card"><div class="cat-card__icon">🧽</div><div class="cat-card__name">SpongeBob</div></a>
+          <a href="angry-birds.html" class="cat-card"><div class="cat-card__icon">🐦</div><div class="cat-card__name">Angry Birds</div></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="popularne">
+      <div class="container">
+        <div class="section__head">
+          <h2 class="section__title">Popularne i nowe</h2>
+        </div>
+        <div class="games-grid" data-section="popular" role="list"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__bottom">© 2026 GRYHTML</div>
+    </div>
+  </footer>
+
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/api.js"></script>
+  <script src="assets/js/favorites.js"></script>
+  <script src="assets/js/games.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/categories.js"></script>
+</body>
+</html>

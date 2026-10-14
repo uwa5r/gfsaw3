@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SpongeBob – GRYHTML</title>
+  <meta name="description" content="Gry nawiązujące do SpongeBoba (wyszukiwanie po tagach). Brak oficjalnego powiązania z marką.">
+  <meta property="og:title" content="SpongeBob – GRYHTML">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="header__inner">
+      <a href="index.html" class="logo" aria-label="GRYHTML">
+        <span class="logo__mark" aria-hidden="true">▶</span>
+        <span class="logo__text">GRY<span>HTML</span></span>
+      </a>
+      <nav class="nav" data-nav aria-label="Nawigacja">
+        <a href="index.html">Strona główna</a>
+        <a href="kategorie.html">Kategorie</a>
+        <a href="ulubione.html">Ulubione</a>
+      </nav>
+      <form class="header__search" data-search-form role="search">
+        <label class="sr-only" for="q-h">Szukaj</label>
+        <input type="search" id="q-h" name="q" placeholder="Szukaj gier…" autocomplete="off">
+        <button type="submit" aria-label="Szukaj">🔍</button>
+      </form>
+      <div class="header__actions">
+        <a href="ulubione.html" class="btn-icon" aria-label="Ulubione">♥ <span data-fav-count hidden></span></a>
+        <button type="button" class="menu-toggle" data-menu-toggle aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+  <div class="menu-overlay" data-menu-overlay></div>
+  <aside class="mobile-menu" data-mobile-menu>
+    <form class="mobile-menu__search" data-search-form><input type="search" name="q" placeholder="Szukaj…" aria-label="Szukaj"></form>
+    <nav data-nav>
+      <a href="index.html">Strona główna</a>
+      <a href="kategorie.html">Kategorie</a>
+      <a href="ulubione.html">Ulubione</a>
+      <a href="szukaj.html">Szukaj</a>
+    </nav>
+  </aside>
+
+  <main>
+    <div class="page-header">
+      <div class="container">
+        <h1>SpongeBob</h1>
+        <p>Gry nawiązujące do SpongeBoba (wyszukiwanie po tagach). Brak oficjalnego powiązania z marką.</p>
+      </div>
+    </div>
+    <div class="container" style="padding-top:8px;padding-bottom:40px">
+      <div class="toolbar">
+        <input type="search" data-cat-search placeholder="Filtruj w kategorii…" aria-label="Filtruj gry">
+        <select data-sort aria-label="Sortuj">
+          <option value="default">Domyślna kolejność</option>
+          <option value="title-asc">Tytuł A–Z</option>
+          <option value="title-desc">Tytuł Z–A</option>
+        </select>
+      </div>
+      <p class="info-line" data-category-info></p>
+      <div class="games-grid" data-category-results role="list"></div>
+      <div class="load-more-wrap">
+        <button type="button" class="btn btn--secondary" data-load-more hidden>Załaduj więcej</button>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__bottom">© 2026 GRYHTML. Kategorie tematyczne opierają się na tagach i tytułach gier z zewnętrznego katalogu. Brak oficjalnego powiązania z markami.</div>
+    </div>
+  </footer>
+
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/api.js"></script>
+  <script src="assets/js/favorites.js"></script>
+  <script src="assets/js/games.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/categories.js"></script>
+</body>
+</html>

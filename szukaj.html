@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Szukaj gier – GRYHTML</title>
+  <meta name="description" content="Wyszukaj darmowe gry HTML5 po tytule, tagach i kategoriach.">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="header__inner">
+      <a href="index.html" class="logo"><span class="logo__mark">▶</span><span class="logo__text">GRY<span>HTML</span></span></a>
+      <nav class="nav" data-nav>
+        <a href="index.html">Strona główna</a>
+        <a href="kategorie.html">Kategorie</a>
+        <a href="ulubione.html">Ulubione</a>
+      </nav>
+      <form class="header__search" data-search-form role="search">
+        <label class="sr-only" for="qh">Szukaj</label>
+        <input type="search" id="qh" name="q" placeholder="Szukaj gier…" autocomplete="off">
+        <button type="submit" aria-label="Szukaj">🔍</button>
+      </form>
+      <div class="header__actions">
+        <a href="ulubione.html" class="btn-icon" aria-label="Ulubione">♥ <span data-fav-count hidden></span></a>
+        <button type="button" class="menu-toggle" data-menu-toggle aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+  <div class="menu-overlay" data-menu-overlay></div>
+  <aside class="mobile-menu" data-mobile-menu>
+    <nav data-nav>
+      <a href="index.html">Strona główna</a>
+      <a href="kategorie.html">Kategorie</a>
+      <a href="ulubione.html">Ulubione</a>
+    </nav>
+  </aside>
+
+  <main>
+    <div class="page-header">
+      <div class="container">
+        <h1>Wyszukiwanie</h1>
+        <p>Szukaj po tytule, opisie, tagach i kategoriach.</p>
+      </div>
+    </div>
+    <div class="container" style="padding-top:8px;padding-bottom:48px">
+      <form class="toolbar" data-search-form-page>
+        <input type="search" data-search-input name="q" placeholder="Np. mario, roblox, racing…" aria-label="Fraza wyszukiwania" autocomplete="off">
+        <select data-sort aria-label="Sortuj">
+          <option value="default">Trafność / kolejność API</option>
+          <option value="title-asc">Tytuł A–Z</option>
+          <option value="title-desc">Tytuł Z–A</option>
+        </select>
+        <button type="submit" class="btn btn--primary btn--sm">Szukaj</button>
+      </form>
+      <p class="info-line" data-search-info></p>
+      <div class="games-grid" data-search-results role="list"></div>
+      <div class="load-more-wrap">
+        <button type="button" class="btn btn--secondary" data-load-more hidden>Załaduj więcej</button>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container"><div class="footer__bottom">© 2026 GRYHTML</div></div>
+  </footer>
+
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/api.js"></script>
+  <script src="assets/js/favorites.js"></script>
+  <script src="assets/js/games.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/search.js"></script>
+</body>
+</html>
